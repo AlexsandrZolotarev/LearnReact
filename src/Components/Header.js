@@ -29,7 +29,7 @@ export default function Header(props) {
             <span className='logo'>Zolotorev</span>
             <ul className='nav'>
               <li>About us</li>
-              <li>Contacts</li>
+              <li><a href ='#Contacts' target= "_self"> Contacts</a></li>
               <li>Office</li>
             </ul>
             <BsBag onClick={() => setCartOpen(cartOpen = !cartOpen) } className={`shop-cart-button ${cartOpen && 'active'}`}/>

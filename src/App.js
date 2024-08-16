@@ -65,6 +65,16 @@ class App extends React.Component {
       ],
       showFullItem : false,
       fullItem: {},
+      contacts : [
+       { 
+        id : 1,
+        name: 'fdd',
+        email : 'email',
+        phone : '+85',
+        message : 'Pidr',
+        file : '',
+        }
+      ]
   }
 
     this.state.currentItems = this.state.items;
@@ -73,6 +83,7 @@ class App extends React.Component {
     this.deleteOrder = this.deleteOrder.bind(this);
     this.chooseCategories = this.chooseCategories.bind(this);
     this.onShowItem = this.onShowItem.bind(this);
+    this.onShowContacts = this.onShowContacts.bind(this);
   }
   render()
   {
@@ -82,10 +93,15 @@ class App extends React.Component {
       <Categories chooseCategories = {this.chooseCategories} />
       <Items  onShowItem= {this.onShowItem} items= {this.state.currentItems} onAdd ={this.addToOrder}/>
       {this.state.showFullItem && <ShowFullItem onAdd ={this.addToOrder} onShowItem= {this.onShowItem} item = {this.state.fullItem}/>}
-      <Contacts/>
+      <Contacts contacts={this.state.contacts}  onShowContacts ={this.onShowContacts}/>
       <Footer/>
     </div>)
   } 
+
+  onShowContacts(value)
+  {
+    console.log(value);
+  }
 
   onShowItem(item)
   { 

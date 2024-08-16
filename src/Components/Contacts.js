@@ -5,31 +5,30 @@ import { FaTwitter } from "react-icons/fa";
 import { SlSocialVkontakte } from "react-icons/sl";
 
 export class Contacts extends Component {
-  render() {
-    return (
 
-
-      <section className='contacts'>
+    render(){
+    return(
+      <section className='contacts' name="Contacts" id='Contacts'>
         <article className='contacts-title'>
             <p>Contacts</p>
         </article>
         <article className='contacts-body'>
             <div className='contacts-body-fieds'>
                 <div className='contacts-body-fieds__name'>
-                    <p>Name</p>
-                    <input type='text' pattern ='name' required></input>
+                    <p>Name</p> 
+                    <input type='text' pattern ='name'  onChange={ () =>this.props.onShowContacts(this.props.contacts[0].name)} required ></input>
                 </div>
                 <div className='contacts-body-fieds__email'>
                     <p>Email</p>
-                    <input type='email' pattern=".+@example\.com" required></input>
+                    <input type='email' pattern=".+@example\.com" value={this.props.contacts.email} required></input>
                 </div>
                 <div className='contacts-body-fieds__pnone'>
                     <p>Phone</p>
-                    <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required></input>
+                    <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={this.props.contacts.phone} required></input>
                 </div>
                 <div className='contacts-body-fieds__message'>
                     <p>Message</p>
-                    <input type='text'></input>
+                    <input type='text' value={this.props.contacts.Message}></input>
                 </div>
                 <div className='contacts-body-fieds__file'>
                     <p>Attach file</p>
@@ -68,10 +67,10 @@ export class Contacts extends Component {
                 </ul>
             </div>
         </article>
-        <button className='contacts-button'>Send Message</button>
+        <button className='contacts-button' onClick={() => this.props.onShowContacts}>Send Message</button>
       </section>
     )
-  }
+}
 }
 
 export default Contacts
