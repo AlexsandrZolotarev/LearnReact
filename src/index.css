@@ -446,7 +446,7 @@ main .item img:hover
 {
     color: white;
     position: relative;
-    top: 10px;
+    top: 11px;
     right: -12px;   
 }
 .contacts-body-textContact__icons li:hover
@@ -460,17 +460,94 @@ main .item img:hover
 }
 .contacts-button
 {
-    width: 41%;
+    width: 100%;
     font-size: 20px;
     padding: 15px;
     background: transparent;
     border: 1px solid black;
     text-transform: uppercase;
     transition: all 0.4s linear;
-
+    margin-top: 20px;
 }
 .contacts-button:hover
 {
     background-color: yellow;
     right: 100%;
+}
+.contacts-body-fieds__file__form
+{
+    width: 80%;
+}
+.input-file {
+	position: relative;
+	display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-bottom:1px solid black;
+    padding-bottom: 4%;
+    align-items: center;
+    transition: all 500ms ease;
+}
+.input-file-btn {
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	font-size: 12px;
+	color: black;
+    text-transform: uppercase;
+    font-weight: 500;
+    background-color: #f2f2f2;
+	text-align: center;
+	border-radius: 20px;
+	line-height: 20px;
+	height: 30px;
+	padding: 5px 15px;
+	box-sizing: border-box;
+	border: none;
+	margin: 0;
+    transition: all 500ms ease;
+    
+}
+.input-file-text {
+	padding: 0 10px;
+	line-height: 40px;
+	display: inline-block;
+}
+.input-file input[type=file] {
+	position: absolute;
+	z-index: -1;
+	opacity: 0;
+	display: block;
+	width: 0;
+	height: 0;
+
+}
+ 
+.input-clip
+{
+    transition: all 500ms ease;
+    width: 20px;
+    height: 30px;
+    margin-right: 2%;
+}
+ 
+.input-clip:hover
+{
+    transform: scale(1.1);
+}
+ 
+/* Hover/active */
+.input-file:hover .input-file-btn {
+	border: 1px solid silver;
+    transform: scale(1.1);
+
+}
+.input-file:active .input-file-btn {
+	border-color: silver;
+    transform: scale(1.1);
+
+}
+/* Disabled */
+.input-file input[type=file]:disabled + .input-file-btn {
+	background-color: #eee;
 }
