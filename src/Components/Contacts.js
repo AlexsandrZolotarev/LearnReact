@@ -1,12 +1,25 @@
-import React, { Component } from 'react'
+import React, { useState } from 'react'
+// import {useRef} from 'react';
 import { FaFacebookF } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaTwitter } from "react-icons/fa";
 import { SlSocialVkontakte } from "react-icons/sl";
+import { BsPaperclip } from 'react-icons/bs';
 
-export class Contacts extends Component {
 
-    render(){
+
+export default function Contacts(props) {
+
+    const contact = {
+        name:  useState(''),
+        email:  useState(''),
+        tel:  useState(null),
+        message:  useState(''),
+    };
+    function handleClick()
+    {
+        console.log(contact);
+    }
     return(
       <section className='contacts' name="Contacts" id='Contacts'>
         <article className='contacts-title'>
@@ -16,23 +29,27 @@ export class Contacts extends Component {
             <div className='contacts-body-fieds'>
                 <div className='contacts-body-fieds__name'>
                     <p>Name</p> 
-                    <input type='text' pattern ='name'  onChange={ () =>this.props.onShowContacts(this.props.contacts[0].name)} required ></input>
+                    <input type='text' name='name'  onChange={e => contact.name} pattern ='name' required ></input>
                 </div>
                 <div className='contacts-body-fieds__email'>
                     <p>Email</p>
-                    <input type='email' pattern=".+@example\.com" value={this.props.contacts.email} required></input>
+                    <input type='email'name='email' ref={contact.email} pattern=".+@example\.com" required></input>
                 </div>
                 <div className='contacts-body-fieds__pnone'>
                     <p>Phone</p>
-                    <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" value={this.props.contacts.phone} required></input>
+                    <input type="text" name="phone"  ref={contact.tel} pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"  required></input>
                 </div>
                 <div className='contacts-body-fieds__message'>
                     <p>Message</p>
-                    <input type='text' value={this.props.contacts.Message}></input>
+                    <input type='text' ref={contact.message} name='message'></input>
                 </div>
                 <div className='contacts-body-fieds__file'>
-                    <p>Attach file</p>
-                    <input type="file" name="avatar" accept="image/png, image/jpeg"></input>
+                        <label className="input-file">
+                            <input type="file" name="file"/>
+                            <span className="input-file-btn">Attach file</span>   
+                            <BsPaperclip className='input-clip'/>
+                        </label>
+              
                 </div>
             </div>
 
@@ -67,10 +84,7 @@ export class Contacts extends Component {
                 </ul>
             </div>
         </article>
-        <button className='contacts-button' onClick={() => this.props.onShowContacts}>Send Message</button>
+        <button className='contacts-button' onClick={handleClick} >Send Message</button>
       </section>
     )
 }
-}
-
-export default Contacts

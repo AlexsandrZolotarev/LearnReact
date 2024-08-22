@@ -65,16 +65,7 @@ class App extends React.Component {
       ],
       showFullItem : false,
       fullItem: {},
-      contacts : [
-       { 
-        id : 1,
-        name: 'fdd',
-        email : 'email',
-        phone : '+85',
-        message : 'Pidr',
-        file : '',
-        }
-      ]
+      contacts : []
   }
 
     this.state.currentItems = this.state.items;
@@ -131,7 +122,7 @@ class App extends React.Component {
   {
     let isInArray = false;
     this.state.orders.forEach(el => {
-      if(el.id == item.id)  isInArray = true;
+      if(el.id === item.id)  isInArray = true;
     });
     if(!isInArray) this.setState({orders : [...this.state.orders,item]})
   }

@@ -460,7 +460,7 @@ main .item img:hover
 }
 .contacts-button
 {
-    width: 100%;
+    width: 50%;
     font-size: 20px;
     padding: 15px;
     background: transparent;
@@ -474,7 +474,11 @@ main .item img:hover
     background-color: yellow;
     right: 100%;
 }
-.contacts-body-fieds__file__form
+
+
+
+
+.contacts-body-fieds__file
 {
     width: 80%;
 }
@@ -482,11 +486,13 @@ main .item img:hover
 	position: relative;
 	display: flex;
     justify-content: space-between;
-    margin-top: 10px;
+    margin-top: 0px;
+    margin: 0;
     border-bottom:1px solid black;
     padding-bottom: 4%;
     align-items: center;
     transition: all 500ms ease;
+    border-bottom: 0;
 }
 .input-file-btn {
 	position: relative;
@@ -533,7 +539,7 @@ main .item img:hover
  
 .input-clip:hover
 {
-    transform: scale(1.1);
+    transform: scale(1.5);
 }
  
 /* Hover/active */
