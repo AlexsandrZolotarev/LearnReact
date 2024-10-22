@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/AlexsandrZolotarev/Zolotarev/static/css/main.61851121.css",
+    "main.js": "/AlexsandrZolotarev/Zolotarev/static/js/main.7f662c62.js",
+    "static/media/i.webp": "/AlexsandrZolotarev/Zolotarev/static/media/i.409214dd1cdfe9dddd8d.webp",
+    "index.html": "/AlexsandrZolotarev/Zolotarev/index.html",
+    "main.61851121.css.map": "/AlexsandrZolotarev/Zolotarev/static/css/main.61851121.css.map",
+    "main.7f662c62.js.map": "/AlexsandrZolotarev/Zolotarev/static/js/main.7f662c62.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.61851121.css",
+    "static/js/main.7f662c62.js"
+  ]
+}
